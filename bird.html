@@ -243,8 +243,8 @@
                 image.src = "tree.jpg"
             }
             if (position == statueLocation || 
-            postition == toucanLocation || 
-            lorikeetLocations.includes(postition) ||
+            position == toucanLocation || 
+            lorikeetLocations.includes(position) ||
             buntingLocations.includes(position)) {
                 image.onclick = null
             }
@@ -282,7 +282,7 @@
                             if(pos == toucanLocation){
                                 result = "caw"
                             }
-                            if(pos == statueLocation){
+                            else if(pos == statueLocation){
                                 result = "thrrum"
                             }
                         }
