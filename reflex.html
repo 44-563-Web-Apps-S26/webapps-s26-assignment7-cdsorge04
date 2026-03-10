@@ -24,24 +24,37 @@
   <br> 
   <button type="button"
   class="btn btn-primary"
-  onclick="startGame()">
+  onclick="beginTime()">
   Go</button>
   <button class = "btn btn-danger" onclick = "recordTime()">
     Halt
   </button>
   <script> 
+  let haltTime = undefined
   function recordTime() {
     haltTime = Date.now()
     console.log(haltTime)
   }
 
-  function buttonPress2() {
+  function beginTime() {
     haltTime = undefined
     for (let i = 5; i >= 0; i--){
-      setTimeout(() => {
+      setTimeout(function() {
         document.getElementById("couter").innerHTML = i
       }, (5 - i) * 1000)
     }
+    setTimeout(function() {
+      if (haltTime == undefined){
+        document.getElementById("target").innerHTML = 
+        "Not Soon enough"
+      }
+      else {
+        let targetTime = Date.now()
+        let elapsed = haltTime - targetTime
+        document.getElementById("target").innerHTML =
+        "Time Was" + elapsed
+      }
+    }, 5000)
   }
   </script>
 
