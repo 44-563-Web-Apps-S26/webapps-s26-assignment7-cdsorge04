@@ -242,7 +242,12 @@
             else{
                 image.src = "tree.jpg"
             }
-            image.onclick = ""
+            if (position == statueLocation || 
+            postition == toucanLocation || 
+            lorikeetLocations.includes(postition) ||
+            buntingLocations.includes(position)) {
+                image.onclick = null
+            }
             locationsVisited += 1
             document.getElementById("location").innerHTML =
             "Number of locations checked is " + locationsVisited
@@ -262,6 +267,7 @@
             for(var i=0;i<neighbors.length;i++){
                 if(buntingLocations.includes(neighbors[i])){
                     result = "cheep"
+                    break
                 }
             }
             if(result == "silence"){
