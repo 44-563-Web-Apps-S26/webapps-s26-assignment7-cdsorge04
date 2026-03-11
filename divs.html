@@ -58,7 +58,7 @@
 		/* make the div and its text */
 		let element = document.createElement("div")
 		let value = document.getElementById("inputText").value
-		element.innerHTML = "value"
+		element.innerHTML = value
 		element.className = "divList"
 
 		/* add it to the container */
@@ -69,13 +69,13 @@
 	function addFront(){
 		let element = document.createElement("div")
 		let value = document.getElementById("inputText").value
-		element.innerHTML = "value"
+		element.innerHTML = value
 		element.className = "divList"
 		let container = document.getElementById('target')
 		container.insertBefore(element, container.firstChild)
 	}
 	function removeItem(){
-		let divListItems = document.getElementsById("divList")
+		let divListItems = document.getElementsByClassName("divList")
 		let length = divListItems.length
 		if (length > 1){
 			divListItems[1].remove()
